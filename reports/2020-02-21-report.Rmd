@@ -1,0 +1,63 @@
+---
+title: "Portal Dataset Report"
+output: html_document
+---
+
+
+```{r loadLibrariesData, echo=FALSE, message=FALSE}
+library(dplyr)
+library(ggplot2)
+library(knitr)
+surveys <- read.csv('../clean_data/portal_data_joined.csv')
+```
+
+# Introduction
+
+On Feb 12th, 2020 our collaborator, Dr. Ron Wisconsin, sent me an initial dataset of kangaroo rats and other creatures that were recorded as part of the "Long-term monitoring and experimental manipulation of a Chihuahuan Desert ecosystem near Portal, Arizona" project.  The raw data files are stored in `raw_data` folder.
+
+After some data cleaning, I created a csv of relatively clean data (`data/portal_data_joined.csv`) to read work with in R.
+For more info on the data cleaning I performed please see `notes/2020-02-13-datacleaninglog.md`.
+The dataset contains `r nrow(surveys)` observations of the following variables: `r colnames(surveys)`.
+The observations begin in `r min(surveys$year)` and go until `r max(surveys$year)`.
+
+
+## Preview of the data 
+```{r previewData, echo=FALSE}
+kable(head(surveys))
+```
+
+## Data Summaries
+
+The data includes the following distribution of taxa.
+
+```{r taxa, echo=FALSE}
+surveys %>% count(taxa) %>% kable()
+```
+
+Genus counts by year, a subset.
+
+```{r gemisByYear, echo=FALSE}
+yearly_counts <- surveys %>%
+  count(year, genus)
+
+kable(head(yearly_counts))
+```
+
+
+
+```{r genusByYearGraph}
+ggplot(data = yearly_counts, mapping = aes(x = year, y = n, color = genus)) +
+    geom_line()
+```
+
+
+
+
+
+
+
+
+
+
+
+
