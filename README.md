@@ -7,14 +7,14 @@ See that site for info about data download and full lesson.
 
 ## Project info
 
-File structure:
-| - notes/ # folder with notes from data processing and analysis
-| - raw_data/ # raw data files recieved from collaborators
-| - clean_data/ # cleaned and processed data files
-| - reports # Rmarkdown reports (and their htmls) generated for collaborators
-| - scripts # scripts used for data processing
-| - install.R # file to install R packages for binder to run
-| - runtime.txt # file for binder to run R environment
+### File structure:
+| - notes/ # folder with notes from data processing and analysis  
+| - raw_data/ # raw data files recieved from collaborators  
+| - clean_data/ # cleaned and processed data files  
+| - reports # Rmarkdown reports (and their htmls) generated for collaborators  
+| - scripts # scripts used for data processing  
+| - install.R # file to install R packages for binder to run  
+| - runtime.txt # file for binder to run R environment  
 
 ## My Binder Section
 
