@@ -1,2 +1,7 @@
 install.packages(c("ggplot2",
-                   "dplyr"))
+                   "dplyr",
+                   "knitr",
+                   "highr",
+                   "markdown",
+                   "yaml",
+                   "rmarkdown"))
