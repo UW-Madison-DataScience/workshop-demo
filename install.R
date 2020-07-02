@@ -5,4 +5,4 @@ install.packages(c("ggplot2",
                    "markdown",
                    "yaml",
                    "rmarkdown",
-                   "tidyr))
+                   "tidyr"))
