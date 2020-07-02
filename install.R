@@ -4,4 +4,5 @@ install.packages(c("ggplot2",
                    "highr",
                    "markdown",
                    "yaml",
-                   "rmarkdown"))
+                   "rmarkdown",
+                   "tidyr))
