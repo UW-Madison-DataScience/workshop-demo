@@ -1,0 +1,58 @@
+---
+title: "Year Report"
+author: "Sarah Stevens"
+date: "6/20/2022"
+output: html_document
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo=FALSE)
+```
+
+
+```{r loadLibrariesData, echo=FALSE, message=FALSE}
+library(dplyr)
+library(ggplot2)
+library(knitr)
+surveys <- read.csv('../clean_data/portal_data_joined.csv')
+```
+
+```{r}
+specific_year = 1980
+year_surveys <- surveys %>% filter(year == specific_year)
+```
+
+## Report for `r specific year`
+
+The year `r specific_year` had `r nrow(year_surveys)` observations of the following species: `r unique(paste(year_surveys$genus, year_surveys$species))`.
+
+
+```{r}
+# Taxon count for the year
+kable(year_surveys %>% count(taxa))
+```
+
+
+```{r}
+# weight v hindfoot length scatter
+ggplot(year_surveys, aes(x=hindfoot_length, y=weight, color=species_id)) +
+  geom_point()
+```
+
+
+```{r}
+# weight v hindfoot length v sex scatter for each species for specific year
+year_surveys %>% filter(!is.na(weight), !is.na(hindfoot_length)) %>% 
+ggplot(aes(x=hindfoot_length, y=weight, color=sex)) +
+  geom_point() +
+  facet_wrap(~species_id)
+```
+
+
+```{r}
+# monthly genus counts
+year_surveys %>% count(genus, month) %>% 
+ggplot(aes(x=month, y=n, color=genus)) + 
+  geom_line()
+
+```
