@@ -22,7 +22,7 @@ specific_year = 1980
 year_surveys <- surveys %>% filter(year == specific_year)
 ```
 
-## Report for `r specific year`
+## Report for `r specific_year`
 
 The year `r specific_year` had `r nrow(year_surveys)` observations of the following species: `r unique(paste(year_surveys$genus, year_surveys$species))`.
 
