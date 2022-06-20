@@ -13,7 +13,7 @@ surveys <- read.csv('../clean_data/portal_data_joined.csv')
 
 # Introduction
 
-On Feb 12th, 2020 our collaborator, Dr. Ron Wisconsin, sent me an initial dataset of kangaroo rats and other creatures that were recorded as part of the "Long-term monitoring and experimental manipulation of a Chihuahuan Desert ecosystem near Portal, Arizona" project.  The raw data files are stored in `raw_data` folder.
+On Feb 12th, 2022 our collaborator, Dr. Ron Wisconsin, sent me an initial dataset of kangaroo rats and other creatures that were recorded as part of the "Long-term monitoring and experimental manipulation of a Chihuahuan Desert ecosystem near Portal, Arizona" project.  The raw data files are stored in `raw_data` folder.
 
 After some data cleaning, I created a csv of relatively clean data (`data/portal_data_joined.csv`) to read work with in R.
 For more info on the data cleaning I performed please see `notes/2020-02-13-datacleaninglog.md`.
