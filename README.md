@@ -18,5 +18,5 @@ See that site for info about data download and full lesson.
 
 ## My Binder Section
 
-[![Rstudio Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UW-Madison-DataScience/workshop-demo/HEAD?urlpath=rstudio)
+[![Rstudio Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UW-Madison-DataScience/workshop-demo/main?urlpath=rstudio)
 
